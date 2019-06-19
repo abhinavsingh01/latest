@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col col-6" *ngFor = "let prod of products.productList">
+			<a routerLink="{{prod.r}}">
+			<div class="card" style="width: 100%;">
+			    <div class="card-body">
+            <div class="card-title"><img src="assets/{{prod.imgUrl}}" width = "90%" height="inherit"/></div>
+			      <h5 class="card-title sub-name p-name">{{prod.name}}</h5>
+			      <div class="card-text sub-offer d-price">{{prod.dPrice}}</div>
+			      <div class="card-text sub-offer a-price">{{prod.aPrice}}</div>
+			      <div class="card-text sub-offer p-offer">{{prod.offer}}</div>
+			      <div class="rate-container">
+			    	  <span class="rating" [class.active] = 'prod.rating > 0 '></span>
+			    	  <span class="rating" [class.active] = 'prod.rating > 1 '></span>
+			    	  <span class="rating" [class.active] = 'prod.rating > 2 '></span>
+			    	  <span class="rating" [class.active] = 'prod.rating > 3 '></span>
+			    	  <span class="rating" [class.active] = 'prod.rating > 4 '></span>
+			  	</div>
+			    </div>
+			  </div>
+			</a>
+		</div>
+	</div>
+</div>

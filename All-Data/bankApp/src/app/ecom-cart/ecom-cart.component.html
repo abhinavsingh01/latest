@@ -1,0 +1,29 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+
+<div class="container-fluid">
+<div style="margin-bottom: 60px;">
+  <div *ngIf = "isCartEmpty">Your cart is empty</div>
+ <div class="card" style="width: 100%;" *ngFor="let prod of products">
+    <div class="card-body">
+      <div class="left"><img src="assets/{{prod.imgUrl}}" width="50%" /></div>
+      <div class="right">
+      	<div class="title">{{prod.title}}</div>
+      	<div class="price">
+      		<div class="d-price">Rs. {{prod.dPrice}}</div>
+      	</div>
+        <div class="cart-remove" (click)="deleteCart(prod.pId)">Remove</div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="bottom-bar">
+  	<div class="left">Total Rs. {{cart.tPrice}}</div>
+  	<a routerLink = "/ecom/checkout/delivery/address">
+    <div class="right" *ngIf="!isCartEmpty">
+  		<div class="button">Select Address</div>
+  	</div>
+  </a>
+  </div>
+</div>

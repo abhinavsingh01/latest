@@ -1,0 +1,21 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+<div class="container-fluid">
+	<h5>Top Categories</h5>
+	<div *ngFor="let subCategory of category.subCategories">
+		<a routerLink="{{subCategory.r}}" >
+		<div class="card" style="width: 100%;">
+		    <div class="card-body">
+          <div class="left">
+            <img src="assets/{{subCategory.imgUrl}}" width="100%">
+          </div>
+          <div class="right">
+		          <h5 class="card-title sub-name">{{subCategory.name}}</h5>
+		            <p class="card-text sub-offer">{{subCategory.offer}}</p>
+          </div>
+		    </div>
+		  </div>
+		  </a>
+	</div>
+</div>

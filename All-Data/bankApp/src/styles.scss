@@ -1,0 +1,112 @@
+$themeColor: #bc3f3d;
+/* You can add global styles to this file, and also import other style files */
+.header{
+	height: 50px;
+	background-color: $themeColor;
+	.heading{
+  a{
+    color: #ffffff;
+  }
+		color: #ffffff;
+		font-size: 1.5em;
+		margin-left: 10px;
+		padding-top: 5px;
+		.fa-arrow-left{
+			margin-right: 15px;
+		}
+	}
+}
+
+.container-fluid{
+	padding-bottom: 40px;
+}
+
+.a-class{
+	margin-bottom: 10px;
+	float: left;
+	width: 100%;
+	.left{
+		float: left;
+		width: 50%;
+		font-weight: bold;
+	}
+	.right{
+		float: left;
+		width: 50%;
+		text-align: right;
+	}
+	::after{
+		clear: both;
+	}
+}
+
+.bottom-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+
+  background: #4c4c4c;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+	z-index: 9999;
+}
+
+.error{
+	font-size: 11px;
+	color: red;
+}
+
+
+/* MODAL STYLES
+-------------------------------*/
+bk-modal {
+    /* modals are hidden by default */
+    display: none;
+
+    .bk-modal {
+        /* modal container fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* z-index must be higher than .jw-modal-background */
+        z-index: 1000;
+
+        /* enables scrolling for tall modals */
+        overflow: auto;
+
+        .bk-modal-body {
+            padding: 20px;
+            background: #fff;
+
+            /* margin exposes part of the modal background */
+            margin: 40px;
+        }
+    }
+
+    .bk-modal-background {
+        /* modal background fixed across whole screen */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        /* semi-transparent black  */
+        background-color: #000;
+        opacity: 0.75;
+
+        /* z-index must be below .jw-modal and above everything else  */
+        z-index: 900;
+    }
+}
+
+body.bk-modal-open {
+    /* body overflow is hidden to hide main scrollbar when modal window is open */
+    overflow: hidden;
+}

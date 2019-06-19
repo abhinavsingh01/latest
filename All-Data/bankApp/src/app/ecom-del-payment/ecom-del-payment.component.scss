@@ -1,0 +1,43 @@
+.card{
+	margin-top:10px;
+}
+
+.cart-container{
+margin-top: 10px;
+	.card{
+	height: 120px;
+	margin-top:10px;
+	.left{
+		float: left;
+		width: 30%;
+		border-right: 1px solid #d8d8d8;
+		text-align: center;
+	}
+	.right{
+		float: left;
+		width: 70%;
+		padding-left: 10px;
+		text-align: left;
+		font-size: 13px;
+		.p-title{
+			font-size: 14px;
+		}
+	}
+}
+}
+
+.bottom-bar{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 10px;
+	background: #131313;
+	text-align: center;
+	color: #ffffff;
+}
+
+.highlight{
+	background-color: green;
+	color: #ffffff;
+}

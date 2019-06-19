@@ -1,0 +1,70 @@
+*{
+	color: #131313;
+}
+.top-container{
+	width: 100%;
+	background: #bc3f3d;
+	padding-top: 10px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-bottom:20px;
+}
+
+.container-fluid{
+	padding: 0px;
+	margin-top: 1px;
+}
+
+.bottom-container{
+	border-bottom: 10px solid #d8d8d8;
+	h4{
+		padding: 10px;
+	}
+	.row{
+		margin: 0px;
+		.col{
+			border: 1px solid #d8d8d8;
+			height: 80px;
+			display: flex;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+			border-right: 0;
+			border-bottom: 0;
+			font-size: 12px;
+			div{
+				display: block;
+			}
+		}
+		.col1{
+			border-left: 0;
+		}
+	}
+}
+
+.search-box input{
+	width: 100%;
+	padding: 5px;
+}
+
+h5{
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.banking{
+	padding-top: 1px;
+
+}
+.col a .fa{
+	color: #bc3f3d !important;
+}
+
+.p-offers a{
+	color: #bc3f3d !important;
+}
+#map {
+	height: 400px;  /* The height is 400 pixels */
+	width: 100%;  /* The width is the width of the web page */
+	}

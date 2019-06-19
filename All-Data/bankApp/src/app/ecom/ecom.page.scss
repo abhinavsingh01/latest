@@ -1,0 +1,37 @@
+.bannerImg{
+	height: 150px;
+	width: 100%;
+}
+
+.sub-name{
+	font-weight: bold;
+}
+
+.sub-offer{
+	font-size: 12px;
+}
+
+.card{
+	margin-bottom: 10px;
+}
+
+.search-ecom{
+	margin-top: 10px;
+	input{
+		padding: 5px;
+	}
+}
+
+.card-body{
+	color: #181818;
+	.left{
+		float: left;
+		width: 30%;
+		text-align: center;
+	}
+	.right{
+		float: left;
+		width: 70%;
+		padding-left: 10px;
+	}
+}

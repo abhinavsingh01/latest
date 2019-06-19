@@ -1,0 +1,55 @@
+$themeColor: #bc3f3d;
+.login-container{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $themeColor;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 100px;
+
+  h1{
+    margin-bottom: 30px;
+  }
+
+  .cutomer-login, .store-login{
+    background: orange;
+    padding: 10px;
+    font-size: 15px;
+    width: 150px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 5px;
+  }
+}
+
+.aadhar-container{
+  .aadhar-form{
+  padding: 10px;
+  input{
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  }
+  .re-otp{
+    font-size: 12px;
+    color: blue;
+  }
+}
+
+.bottom-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+
+  background: #4c4c4c;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+}

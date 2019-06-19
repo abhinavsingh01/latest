@@ -1,0 +1,17 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+
+<div class="container-fluid">
+	<div class="track-form">
+		<div class="input-orderId">
+			<h5>Enter Order Number</h5>
+			<input type="text" placeholder = "Enter order number" [(ngModel)] = "orderId"/>
+		</div>
+		<div class="input-mobile">
+			<h5>Enter Mobile Number</h5>
+			<input type="text" placeholder = "Enter mobile number" [(ngModel)] = "mobile"/>
+		</div>
+	</div>
+	<div class="track-button" (click)="track()">Track</div>
+</div>

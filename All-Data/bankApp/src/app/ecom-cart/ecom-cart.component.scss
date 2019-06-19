@@ -1,0 +1,53 @@
+.card{
+	
+	margin-top:10px;
+	.left{
+		float: left;
+		width: 30%;
+		text-align: center;
+	}
+	.right{
+		border-left: 1px solid #d8d8d8;
+		float: left;
+		width: 70%;
+		padding-left: 10px;
+		text-align: left;
+		font-size: 13px;
+		.p-title{
+			font-size: 14px;
+		}
+		.cart-remove{
+			color: red;
+			font-size: 12px;
+		}
+	}
+}
+
+.card-body{
+	padding: 5px;
+}
+
+.bottom-bar{
+	background: #131313;
+	color: #ffffff;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 10px;
+	.left{
+		float: left;
+		width: 50%;
+	}
+	.right{
+		float: left;
+		width: 50%;
+		text-align: right;
+		background: #bc3f3d;
+		padding: 5px;
+		text-align: center;
+	}
+	.button{
+		color: #ffffff;
+	}
+}

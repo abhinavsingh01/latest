@@ -1,0 +1,98 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div><app-logout #logt (click) = "logout()"></app-logout></div>
+</div>
+
+<div class="container-fluid savings-container" *ngIf="isSavingsAccount">
+  <div class="card" *ngFor="let account of savingAccounts" (click) = "showAccountDetails(account.accNumber, 'Savings')">
+    <div class="card-body">
+      <div class="card-text">
+        <div class="a-name a-class" style="font-weight: bold">Savings Account</div>
+        <div class="a-number a-class"><div class="left">Account No:</div> <div class="right">{{account.accNumber}}</div></div>
+        <div class="a-button">View Details</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid loan-container" *ngIf="isLoanAccount">
+  <div class="card" *ngFor="let account of loanAccounts" (click) = "showAccountDetails(account.accNumber, 'Loan')">
+    <div class="card-body">
+      <div class="card-text">
+        <div class="a-name a-class" style="font-weight: bold">Loan Account</div>
+        <div class="a-number a-class"><div class="left">Account No:</div> <div class="right">{{account.accNumber}}</div></div>
+        <div class="a-button">View Details</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid account-details border-bottom" *ngIf="isAccountDetail">
+  <h5>Account Details</h5>
+  <div class="card" style="margin-bottom: 20px;">
+    <div class="card-body">
+      <div class="card-text">
+        <div class="a-name a-class" style="font-weight: bold">Account balance</div>
+        <div class="a-number a-class" *ngIf="accBalance?.length" >Rs. {{accBalance}}</div>
+        <div class="a-number a-class" *ngIf="outstanding?.length" >Outstanding: Rs. {{outstanding}}</div>
+        <div class="a-number a-class" *ngIf="emi?.length" >EMI This Month: Rs. {{emi}}</div>
+      </div>
+    </div>
+  </div>
+
+   <h5>Other Details</h5>
+    <div class="row border-top" *ngFor="let item of accountDetails | keyvalue">
+
+      <div *ngIf="item?.value?.length" class="col col-6 border border-top-0 border-bottom-0">{{item.key}}</div>
+      <div *ngIf="item?.value?.length" class="col col-6 col-right border border-left-0 border-top-0 border-bottom-0">{{item.value}}</div>
+
+    </div>
+</div>
+
+<div class="container-fluid cash-withdraw" *ngIf="isWithdraw">
+  <h4>Cash Withdrawel Page</h4>
+  <h5>Enter Amount</h5>
+  <div class="withdraw-input">
+    <input type="text" placeholder="Enter amount" [(ngModel)] = "withdrawAmount"/>
+    <div class="error" *ngIf="isAmountError">Please enter valid amount</div>
+  </div>
+  <h5>Select Account</h5>
+  <div class="account-radio">
+    <div class="card" *ngFor="let item of savingAccounts" (click) = "withdrawAccountSelect(item.accNumber)">
+      <div class="card-body">
+        <input type="radio" value={{item.accNumber}} name="s-account" [checked]="wAccount == item.accNumber"/>
+        <span>{{item.accNumber}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="error" *ngIf="isAccountError">Please select an account</div>
+  <div class="bottom-box" (click)="submitWithdraw()">SUBMIT</div>
+</div>
+
+<div class="container-fluid cash-withdraw" *ngIf="isdeposit">
+  <h4>Cash Deposit Page</h4>
+  <h5>Enter Amount</h5>
+  <div class="withdraw-input">
+    <input type="text" placeholder="Enter amount" [(ngModel)] = "depositAmount"/>
+    <div class="error" *ngIf="isAmountError">Please enter valid amount</div>
+  </div>
+  <h5>Select Account</h5>
+  <div class="account-radio">
+    <div class="card" *ngFor="let item of savingAccounts" (click) = "depoitAccountSelect(item.accNumber)">
+      <div class="card-body">
+        <input type="radio" value={{item.accNumber}} name="s-account" [checked]="dAccount == item.accNumber"/>
+        <span>{{item.accNumber}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="error" *ngIf="isAccountError">Please select an account</div>
+  <div class="bottom-box" (click) = "submitDeposit()">SUBMIT</div>
+</div>
+
+<bk-modal id="bank-modal">
+    <h5>{{mHeading}}</h5>
+    <p>{{mBody}}</p>
+    <button (click)="closeModal('bank-modal');">Close</button>
+</bk-modal>
+
+<ngx-spinner></ngx-spinner>

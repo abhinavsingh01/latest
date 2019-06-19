@@ -1,0 +1,42 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+
+<div class="container-fluid">
+    <div class="p-title">{{productDetails.title}}</div>
+    <div class="rate-container">
+			    	  <span class="rating" [class.active] = 'ratingNum > 0 '></span>
+			    	  <span class="rating" [class.active] = 'ratingNum > 1 '></span>
+			    	  <span class="rating" [class.active] = 'ratingNum > 2 '></span>
+			    	  <span class="rating" [class.active] = 'ratingNum > 3 '></span>
+			    	  <span class="rating" [class.active] = 'ratingNum > 4 '></span>
+			  	</div>
+    <div class="product-images">
+    <img src="assets/{{productDetails.imgUrl}}" width = "90%" />
+  </div>
+	<div class="product-details">
+
+
+		<div class="price-container">
+			<span class="d-price">{{productDetails.dPrice}}</span>
+			<span class="a-price">{{productDetails.aPrice}}</span>
+			<span class="discount">{{productDetails.discount}}</span>
+		</div>
+		<div style="float: left; width: 100%;">
+      <div style="margin-top:10px;">Rate this product</div>
+			<app-rating [rating]='rating' [itemId]='rId' (ratingClick)='ratingComponentClick($event)'></app-rating>
+		</div>
+		<div class="policy-container">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="p-details">
+      <h5>Product Details</h5>
+			<ul>
+				<li *ngFor="let detail of productDetails.details">{{detail}}</li>
+			</ul>
+		</div>
+		<div class="buy-button" (click)="buyProduct()">BUY NOW</div>
+	</div>
+</div>

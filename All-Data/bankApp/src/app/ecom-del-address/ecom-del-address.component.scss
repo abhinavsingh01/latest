@@ -1,0 +1,34 @@
+.label{
+	font-size: 12px;
+}
+
+.form{
+	.form-element{
+		margin-top: 15px;
+	}
+	input{
+		width: 100%;
+		padding: 5px;
+		border-radius: 5px;
+	}
+	.button{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		background: red;
+		color: #ffffff;
+		padding: 10px;
+	}	
+}
+
+.enter-new-address{
+	color: green;
+	font-size: 16px;
+	magin-top:10px;
+}
+
+.highlight{
+	background: green !important;
+}

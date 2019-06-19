@@ -1,0 +1,54 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+
+<div class="container-fluid">
+	<div class="select-address" *ngIf="!isNewAddress">
+		<h5>Select Address</h5>
+		<div class="card" (click) = "cardClick($event, address.addressId)" [class.highlight] = "highlight[0]"
+		 *ngFor = "let address of addresses">
+			<div class="card-body">
+				<div class="card-text">
+					<div class="name">{{address.name}}</div>
+					<div class="address">{{address.address}}</div>
+					<div class="mobile">{{address.mobile}}</div>
+				</div>
+			</div>
+		</div>
+		<div class="enter-new-address" (click)="newAddress()" >+ Enter New Address</div>
+	</div>
+	<div class="new-address" *ngIf="isNewAddress" >
+		<h5>Enter new address</h5>
+		<div class="form">
+			<div class="f-name form-element">
+				<div class="label">Enter Name</div>
+				<input type="text" placeholder="Enter Name" [(ngModel)] = "name"/>
+			</div>
+			<div class="f-mobile form-element">
+				<div class="label">Enter Mobile</div>
+				<input type="mobile" placeholder="Enter Mobile" [(ngModel)] = "mobile"/>
+			</div>
+			<div class="f-address1 form-element">
+				<div class="label">Enter Address</div>
+				<input type="text" placeholder="Enter House Number" [(ngModel)] = "address1"/>
+			</div>
+			<div class="f-address2 form-element">
+				<div class="label">Enter Address</div>
+				<input type="text" placeholder="Enter Street/Area" [(ngModel)] = "address2"/>
+			</div>
+			<div class="f-pincode form-element">
+				<div class="label">Enter Pincode</div>
+				<input type="number" placeholder="Enter Pincode" [(ngModel)] = "pincode"/>
+			</div>
+			<div class="f-city form-element">
+				<div class="label">Enter City</div>
+				<input type="text" placeholder="Enter City" [(ngModel)] = "city"/>
+			</div>
+			<div class="f-state form-element" style="margin-bottom: 50px;">
+				<div class="label">Enter State</div>
+				<input type="text" placeholder="Enter State" [(ngModel)] = "state"/>
+			</div>
+			<div class="button" (click) = "saveNewAddress()">SAVE</div>
+		</div>
+	</div>
+</div>

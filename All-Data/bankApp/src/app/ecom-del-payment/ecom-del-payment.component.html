@@ -1,0 +1,51 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+<div class="container-fluid">
+	<h5>Select you payment</h5>
+	<div class="payment-container">
+		<div class="card" (click) = "selectPayMode('online')" [class.highlight] = "isPayOnline">
+			<div class="card-body">
+				<div class="card-text">
+					Online Payment
+				</div>
+			</div>
+		</div>
+		<div class="card" (click) = "selectPayMode('cod')" [class.highlight] = "isPayCod">
+			<div class="card-body">
+				<div class="card-text">
+					Cash on Delivery
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h5 style="margin-top: 10px;">Total Amount</h5>
+	<div class="card">
+		<div class="card-body">
+			<div class="card-text">
+				Total Amount : Rs. 2000
+			</div>
+		</div>
+	</div>
+
+	<div class="cart-container">
+		<h5>Cart</h5>
+		<div class="card" style="width: 100%;" *ngFor="let prod of products">
+		    <div class="card-body">
+		      <div class="left"><img src="assets/{{prod.imgUrl}}" width="50%" /></div>
+		      <div class="right">
+		      	<div class="title">{{prod.title}}</div>
+		      	<div class="price">
+		      		<div class="d-price">Rs. {{prod.dPrice}}</div>
+		      	</div>
+		        <div class="cart-remove" (click)="deleteCart(prod.pId)">Remove</div>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+
+	<div class="bottom-bar" (click) = "completeOrder()">
+		<div class="button">Place Order</div>
+	</div>
+</div>

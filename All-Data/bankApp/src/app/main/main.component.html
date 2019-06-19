@@ -1,0 +1,37 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div><app-logout #logt (click) = "logout()"></app-logout></div>
+</div>
+<div class="container-fluid">
+
+
+  <div class="bottom-container banking">
+    <h5>Banking Services</h5>
+    <div class="row" *ngFor="let items of bItems">
+      <div class="col col1"><div style="text-align: center"><a routerLink="{{items[0].r}}" ><div><i class="fa {{items[0].icon}}" aria-hidden="true"></i></div><div>{{items[0].n}}</div></a></div></div>
+      <div class="col"><div style="text-align: center"><a routerLink="{{items[1].r}}" ><div><i class="fa {{items[1].icon}}" aria-hidden="true"></i></div><div>{{items[1].n}}</div></a></div></div>
+      <div class="col"><div style="text-align: center"><a routerLink="{{items[2].r}}" ><div><i class="fa {{items[2].icon}}" aria-hidden="true"></i></div><div>{{items[2].n}}</div></a></div></div>
+  </div>
+</div>
+
+<div class="bottom-container" style="position: relative">
+    <h4>Shop Online</h4>
+    <div style="position: absolute; top:12px; right:25px; background: red; color: #ffffff; width: 50px; padding: 5px;"><a routerLink="/ecom/status/track" style="color: #ffffff;">Track</a></div>
+    <div class="row" *ngFor="let items of shopCategories">
+      <div class="col col1"><div style="text-align: center"><a routerLink="{{items[0].r}}" ><div><i class="fa {{items[0].icon}}" aria-hidden="true"></i></div><div>{{items[0].n}}</div></a></div></div>
+      <div class="col"><div style="text-align: center"><a routerLink="{{items[1].r}}" ><div><i class="fa {{items[1].icon}}" aria-hidden="true"></i></div><div>{{items[1].n}}</div></a></div></div>
+  </div>
+</div>
+
+<div class="bottom-container p-offers">
+    <h5>Offers For You</h5>
+    <div class="row" *ngFor="let items of topOffersItems">
+      <div class="col col1"><div style="text-align: center;"><a routerLink="{{items[0].r}}" ><div style="color: #bc3f3d !important; font-weight: bold">{{items[0].name | uppercase}}</div><div style="color: #bc3f3d !important; font-weight: bold">{{items[0].offer}}</div></a></div></div>
+
+      <div class="col"><div style="text-align: center"><a routerLink="{{items[1].r}}" ><div style="color: #bc3f3d !important; font-weight: bold">{{items[1].name | uppercase}}</div><div style="color: #bc3f3d !important; font-weight: bold">{{items[1].offer}}</div></a></div></div>
+  </div>
+</div>
+
+<div class="bottom-container">
+    <h4>Nearby Offers</h4>
+    <div id="map"></div>
+</div>

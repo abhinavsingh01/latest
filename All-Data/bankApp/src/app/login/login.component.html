@@ -1,0 +1,44 @@
+<div class="container-fluid login-container" *ngIf="isLogin">
+  <div class="title"><h1>Bank App</h1></div>
+  <div class="login-options">
+    <h5>Choose Login Option</h5>
+    <div class="cutomer-login" (click)="login('customer')">Customer</div>
+    <div class="store-login" (click)="login('owner')">Store Owner</div>
+  </div>
+</div>
+
+<div class="aadhar-container" *ngIf="isAadhar">
+  <div class="header">
+
+    <div class="heading"><i class="fa fa-arrow-left" aria-hidden="true" (click)="back('login')"></i>Test App</div>
+  </div>
+  <div class="aadhar-form">
+    <h5>Enter your aadhar</h5>
+    <input type="text" placeholder="Enter your aadhar number" [(ngModel)] = "aadharNum"/>
+    <div class="error" *ngIf="isAadharInValid">Please enter correct aadhar number</div>
+  </div>
+
+  <div class="bottom-box" (click)="generateOtp()">NEXT</div>
+</div>
+
+<div class="aadhar-container" *ngIf="isOtp">
+  <div class="header">
+   <div class="heading"><i class="fa fa-arrow-left" aria-hidden="true" (click)="back('aadhar')"></i>Test App</div>
+  </div>
+  <div class="aadhar-form">
+    <h5>Enter OTP</h5>
+    <input type="text" placeholder="Enter your otp"  [(ngModel)] = "otp"/>
+    <div class="error" *ngIf="isOtpInvalid">Please enter correct otp</div>
+    <div class="re-otp">Resend OTP</div>
+  </div>
+
+  <div class="bottom-box" (click)="authenticate()">NEXT</div>
+</div>
+
+<bk-modal id="login-modal">
+    <h5>{{mHeading}}</h5>
+    <p>{{mBody}}</p>
+    <button (click)="closeModal('login-modal');">Close</button>
+</bk-modal>
+
+<ngx-spinner></ngx-spinner>

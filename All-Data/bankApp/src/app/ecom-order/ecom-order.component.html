@@ -1,0 +1,49 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div></div>
+</div>
+
+<div class="container-fluid">
+	<div class="card order-status">
+		<div class="card-body">
+			<div class="card-text" *ngIf="status == 'complete'">Your order has been placed succesfully</div>
+			<div class="card-text" *ngIf="status == 'fail'">Your order has not been placed</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<div class="card-body">
+			<div class="card-text">
+				<div class="" style="float: left; width: 100%"><div style="float: left; width: 40%; padding-left:5px;">OrderId: </div><div style="float: left; width: 60%; padding-right:5px; text-align: right">{{order.orderId}}</div></div>
+
+				<div class=""><div style="float: left; width: 40%; padding-left:5px;">Order Date:</div> <div style="float: left; width: 60%; padding-right:5px; text-align: right">{{orderDate}}</div></div>
+				<div class=""><div style="float: left; width: 40%; padding-left:5px;">Order Status:</div> <div style="float: left; width: 60%; padding-right:5px; text-align: right">{{order.status}}</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class="cart-container">
+		<h5>Cart</h5>
+		<div class="card" style="width: 100%;" *ngFor="let prod of products">
+		    <div class="card-body">
+		      <div class="left"><img src="assets/{{prod.imgUrl}}" width="50%" /></div>
+		      <div class="right">
+		      	<div class="title">{{prod.title}}</div>
+		      	<div class="price">
+		      		<div class="d-price">Rs. {{prod.dPrice}}</div>
+		      	</div>
+		        <div class="cart-remove" (click)="deleteCart(prod.pId)">Remove</div>
+		      </div>
+		    </div>
+		  </div>
+	</div>
+
+	<h5 style="margin-top: 10px;">Total Amount</h5>
+	<div class="card">
+		<div class="card-body">
+			<div class="card-text">
+				Total Amount : Rs. {{tPrice}}
+			</div>
+		</div>
+	</div>
+</div>

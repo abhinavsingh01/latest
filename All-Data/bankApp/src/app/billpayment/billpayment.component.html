@@ -1,0 +1,71 @@
+<div class="header">
+  <div class="heading" style="margin-bottom: 20px;"><div style="color: #ffffff; font-size: 24px; float: left;width: 50%;"><a routerLink="/main">The Bank</a></div><app-logout #logt (click) = "logout()"></app-logout></div>
+</div>
+
+<div class="container-fluid bill-fetch" *ngIf="!isBillDetail" (change) = "category()">
+  <h4>Pay your bills</h4>
+  <div class="biller-category biller-select">
+    <h5>Select Category</h5>
+    <select [(ngModel)] = "billCategory">
+      <option value="">Choose Category</option>
+      <option value="Electricity">Electricity</option>
+      <option value="Mobile">Mobile</option>
+    </select>
+  </div>
+  <div class="biller-merchant-electricity biller-select" *ngIf="isElectricity">
+    <h5>Select Merchant</h5>
+    <select [(ngModel)] = "merchant">
+      <option value="">Choose Merchant</option>
+      <option value="Reliance">Reliance</option>
+      <option value="Adani Energy">Adani Energy</option>
+      <option value="Kesco">Kesco</option>
+    </select>
+  </div>
+
+  <div class="biller-merchant-mobile biller-select" *ngIf="isMobile">
+    <h5>Select Merchant</h5>
+    <select [(ngModel)] = "merchant">
+      <option value="">Choose Merchant</option>
+      <option value="Vodafone">Vodafone</option>
+      <option value="Adani">Adani</option>
+      <option value="Kesco">Kesco</option>
+    </select>
+  </div>
+
+  <div class="mobile-input">
+    <h5>Enter Mobile</h5>
+    <input type="tel" [(ngModel)]="mobileNum" style="width: 100%"/>
+    <div class="error" *ngIf="isError">Please enter correct mobile</div>
+  </div>
+
+  <div class="bottom-box" (click)="getBill()">SUBMIT</div>
+</div>
+
+<div class="container-fluid bill-payments" *ngIf="isBillDetail">
+  <div class="border-bottom" style="margin-bottom: 10px;">
+  <h5>Bill Details</h5>
+    <div class="row border-top" *ngFor="let bill of billDetails | keyvalue">
+      <div class="col col-6 border border-top-0 border-bottom-0">{{bill.key}}</div>
+      <div class="col col-6 col-right border border-left-0 border-top-0 border-bottom-0">{{bill.value}}</div>
+    </div>
+    </div>
+
+    <h5>Select Account</h5>
+    <div class="account-radio">
+      <div class="card" *ngFor="let item of savingAccounts" (click) = "accountSelect(item.accNumber)">
+        <div class="card-body">
+          <input type="radio" value="a1" name="s-account" [checked]="account == item.accNumber"/>
+          <span>{{item.accNumber}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-box" (click)="payBill()">PAY</div>
+</div>
+
+<bk-modal id="bank-modal">
+    <h5>{{mHeading}}</h5>
+    <p>{{mBody}}</p>
+    <button (click)="closeModal('bank-modal');">Close</button>
+</bk-modal>
+
+<ngx-spinner></ngx-spinner>
